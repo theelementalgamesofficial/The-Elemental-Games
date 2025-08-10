@@ -1,0 +1,449 @@
+/* Style for The Game of Water page */
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=EB+Garamond&display=swap');
+
+@media (max-width: 1200px) {
+  .timeline-grid {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 60px 20px;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .timeline-box h3 {
+    font-size: 1.2em;
+  }
+
+  .timeline-box .date,
+  .timeline-box p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .timeline-box {
+    padding: 16px;
+  }
+
+  .arrow.right::before,
+  .arrow.left::before {
+    width: 20px;
+  }
+
+  .arrow.right::after,
+  .arrow.left::after {
+    border-width: 4px;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'IM Fell English SC', Georgia, serif;
+  background: linear-gradient(to bottom, #0a0f1c, #0e1625);
+  color: #d5ddeb;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevents sideways scroll */
+}
+
+header {
+  background-image: url('water_header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* no repeat to prevent tiled look */
+  background-blend-mode: multiply;
+  background-color: #0e1625; /* darker tone to multiply against image */
+  text-align: center;
+  padding: 50px 100px 50px 100px;
+  color: #e2f1ff;
+  text-shadow: 0 0 10px #688aab;
+  border-bottom: 4px ridge #526c89;
+}
+
+header h1 {
+  font-size: 6.0em;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.cover-label {
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 2.8em;
+  color: #c0c7d4;
+  text-shadow: 0 0 5px #94b3d9;
+  margin: 40px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.cover-container {
+  max-width: 320px;
+  width: 80vw;
+  aspect-ratio: 2 / 3;
+  margin: 0 auto 60px auto;
+  border: 2px solid #829abf;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(100, 130, 160, 0.4);
+  background: rgba(15, 25, 35, 0.85);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+main {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 99vw;
+  padding: 0px 0;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    #111111 0%,
+    #181818 30%,
+    #222222 60%,
+    #2a2a2a 85%,
+    #1a1a1a 100%
+  );
+  box-shadow: 0 0 120px rgba(80, 90, 110, 0.4);
+  border-top: 2px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background-image: url(water_header.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: #0e1625;
+  overflow: hidden;
+}
+section {
+  background: linear-gradient(
+    135deg,
+    #0e1a2b 0%,
+    #142b3c 25%,
+    #1c3f56 50%,
+    #12374a 75%,
+    #0d1f33 100%
+  );
+  border: 2px solid rgba(130, 160, 190, 0.2); /* semi-transparent icy border */
+  box-shadow:
+    0 0 8px rgba(160, 200, 255, 0.05),
+    0 0 20px rgba(100, 140, 180, 0.15) inset; /* soft outer + inner glow */
+  margin: 40px auto;
+  padding: 40px;
+  font-family: 'EB Garamond', serif;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  transition: border 0.4s ease;
+}
+section h2 {
+  font-size: 2em;
+  color: #aee1f9;
+  text-shadow: 0 0 5px #aee1f9;
+  margin-bottom: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.hover-reveal {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+section:hover .hover-reveal {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.6s ease-in, opacity 0.6s ease-in;
+}
+
+.characters-section {
+  text-align: center;
+  padding: 20px 20px 80px;
+  color: #d6e7f7;
+  border-top: 3px solid rgba(150, 190, 220, 0.2);
+  border-bottom: 3px solid rgba(150, 190, 220, 0.2);
+  margin: 60px 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  margin-bottom: -10px;
+}
+
+
+.characters-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-shadow: 0 0 8px #3a5e80;
+  font-family: 'EB Garamond', serif;
+}
+
+
+
+.spoiler-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.spoiler-warning { 
+  background-color: #020B3B;
+
+  font-size: 3em;
+  text-align: center;
+  padding: 10px;
+  font-family: 'EB Garamond', serif;
+  margin-bottom: -40px;
+  z-index: 2;
+  position: relative;
+  border-radius: 20px; /* Added: smooth, rounded corners */
+}
+
+.blurred {
+  filter: blur(12px) brightness(0.6);
+  pointer-events: none;
+  transition: filter 0.5s ease;
+}
+
+.timeline-section {
+  padding: 80px 40px;
+  background: linear-gradient(to bottom, #0e1c26, #122632);
+  color: #d3eafd;
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+  border-top: 2px solid rgba(160, 200, 255, 0.1);
+  border-bottom: 2px solid rgba(160, 200, 255, 0.1);
+}
+
+.timeline-section h2 {
+  font-size: 3.5em;
+  margin-bottom: 60px;
+  color: #a7d5ff;
+  text-shadow: 0 0 10px rgba(100, 180, 255, 0.5);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px 5px 60px 50px; /* uniform, clean padding */
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.timeline-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensures text is centered horizontally */
+  width: 100%; /* Full width of its grid cell */
+  max-width: 220px; /* Keeps it from being too wide */
+  height: auto;
+  width: 220px;
+  height: 220px;
+  background: rgba(25, 45, 65, 0.85);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow:
+    0 0 15px rgba(100, 150, 200, 0.4),
+    inset 0 0 8px rgba(30, 60, 80, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.timeline-box:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-box h3 {
+  font-size: 1.3em;
+  color: #bde1ff;
+  margin-bottom: 10px;
+}
+
+.timeline-box .date {
+  font-size: 0.9em;
+  color: #85b3d9;
+  margin-bottom: 8px;
+}
+
+.timeline-box p {
+  font-size: 0.95em;
+  line-height: 1.4em;
+  color: #cde6f7;
+}
+
+.card {
+  width: 260px;
+  height: 360px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #102137;
+  border: 2px solid #4d6b8c;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(120, 150, 190, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom:;
+}
+
+.card-front {
+  background: #020B3B
+  border: 2px solid rgba(120, 180, 255, 0.3);
+  box-shadow: 0 0 16px rgba(80, 180, 255, 0.2), inset 0 0 8px rgba(40, 100, 180, 0.15);
+}
+
+.card-back {
+  background: radial-gradient(circle at top, #142230 0%, #0a131a 100%);
+  color: #e2f5ff;
+  box-shadow: inset 0 0 20px rgba(80, 150, 200, 0.1);
+  transform: rotateY(180deg);
+  background: #0E2337;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.card-front h3 {
+  background: rgba(10, 20, 30, 0.7);
+  color: #d0ecff;
+  text-shadow: 0 0 5px rgba(100, 200, 255, 0.2);
+}
+
+/* Optional: adds 40px space between border and cards */
+.card-container {
+  margin-top: 20px;
+}
+
+.footer-image {
+  position: relative;
+  width: 100%;
+  height: 142px;
+  background-image: url('footer_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+/* Footer now inside image, so style it to float nicely */
+.footer-image footer {
+  background: rgba(0, 0, 0, 0.4); /* optional: dark translucent background behind text */
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.footer-image footer a {
+  color: #cfd8e3;
+  font-size: 0.6em;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 0px #000;
+}
+
+.footer-image footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #7fa5c5;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #121212;
+  color: #c4ccd4;
+  font-size: 5.5em;
+  border-top: 2px solid #3d434f;
+  box-shadow: inset 0 0 2px #1a1a1a;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer a {
+  color: #a9bed2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
