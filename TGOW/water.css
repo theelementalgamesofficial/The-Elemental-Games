@@ -56,6 +56,35 @@
     border-width: 4px;
   }
 }
+
+@media (max-width: 768px) {
+  .timeline-grid {
+    display: flex;         /* switch from grid to flex */
+    flex-wrap: nowrap;     /* no wrapping */
+    overflow-x: auto;      /* allow horizontal scroll */
+    padding-left: 20px;    /* reduce left padding */
+    gap: 15px;
+  }
+  
+  .timeline-box {
+    min-width: 220px;      /* fixed width for scroll items */
+    flex: 0 0 auto;        /* don't shrink or grow */
+  }
+}
+
+/* On very small screens, same horizontal scroll applies */
+@media (max-width: 480px) {
+  .timeline-grid {
+    padding-left: 10px;
+    gap: 10px;
+  }
+  
+  .timeline-box {
+    min-width: 200px;
+    height: auto;  /* allow height to auto for smaller phones */
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -276,6 +305,9 @@ section:hover .hover-reveal {
   padding: 20px 5px 60px 50px; /* uniform, clean padding */
   box-sizing: border-box;
   overflow-x: auto;
+  scroll-padding-left: 20px; /* helps scrolling start nicely */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+
 }
 
 .timeline-box {
