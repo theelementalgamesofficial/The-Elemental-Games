@@ -301,7 +301,7 @@ section:hover .hover-reveal {
   transition: filter 0.5s ease;
 }
 .timeline-section {
-  padding: 80px 40px;
+  padding: 80px 10px;
   background: linear-gradient(to bottom, #3c0000, #1a0000);
   color: #ffe2cc;
   font-family: 'EB Garamond', serif;
@@ -329,6 +329,24 @@ section:hover .hover-reveal {
   overflow-x: auto;
   scroll-padding-left: 20px; /* helps scrolling start nicely */
   -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.timeline-section {
+  overflow-x: auto;         /* horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  padding: 0px 0;          /* vertical padding only, horizontal handled inside */
+  width: 100vw;             /* full viewport width */
+  box-sizing: border-box;   /* include padding in width */
+}
+
+.timeline-grid {
+  display: grid;
+  grid-auto-flow: column;   /* force items in a single horizontal row */
+  grid-auto-columns: ; /* fixed width columns */
+  gap: 20px;
+  width: max-content;       /* grid width = sum of all columns */
+  padding-left: 40px;       /* preserve your original left padding */
+  box-sizing: content-box;  /* prevent padding from shrinking width */
 }
 
 .timeline-box {
