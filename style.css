@@ -1,0 +1,396 @@
+/* Dark Fantasy CSS Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .book-list, .card-container, .factoid-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card, .factoid {
+    width: 260px !important;  /* Override the 90% */
+  }
+
+  .book {
+    width: 200px !important;  /* Match your earlier fixed width */
+  }
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.hero {
+  background: url('images/dark_fantasy_bg.jpg') center/cover no-repeat;
+  text-align: center;
+  padding: 40px 20px;
+  color: #f5f5f5;
+  box-shadow: inset 0 0 100px #000;
+}
+
+.hero h1 {
+  font-size: 5em;
+  text-shadow: 2px 2px 5px #000;
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: 0.1px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #7b1fa2, #512da8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #9c27b0, #673ab7);
+}
+
+.books {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.book {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.book img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.book h3 {
+  margin: 15px 0 10px;
+}
+
+.coming-soon {
+  margin-top: 45px; /* adjust this value to move it further down */
+  font-size: 1.0em;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #A3A6C2;
+  text-shadow: 0 0 0px #cfd9e6, 0 0 0px #7a8b99;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.author {
+  background: #121212;
+  padding: 50px 20px;
+  text-align: center;
+  border-bottom: 1px solid #333
+}
+
+.factoid-section {
+  width: 100%;
+  padding: 100px -20px 30px;
+  font-size: 1.25em;
+  background: rgba(18, 18, 18, 0.95);
+  color: #d6dce7;
+  text-align: center;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+.factoid-section h2 {
+  font-size: 2.5em;
+  font-family: 'Cinzel Decorative', serif;
+  margin-bottom: 60px;
+  color: #d4d9e2;
+  text-shadow: 0 0 6px #5c6b7a;
+}
+
+.factoid-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0px;
+  row-gap: 40px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.factoid {
+  width: 200px;
+  height: 200px;
+  margin: 0 -10px;
+  perspective: 1000px;
+  position: relative;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.factoid:hover {
+  z-index: 10;
+  transform: scale(1.05);
+}
+
+.factoid-front,
+.factoid-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: #2c2f35;
+  color: #FFFFFFF;
+  font-size: 1 em;
+  font-family: 'Cinzel Decorative', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(100, 110, 120, 0.3);
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  position: absolute;
+  padding: 15px;
+  text-align: center;
+  line-height: 1.4em;
+  word-wrap: break-word;
+}
+
+.factoid-back {
+  transform: rotateY(180deg);
+}
+
+.factoid:hover .factoid-front {
+  transform: rotateY(180deg);
+}
+
+.factoid:hover .factoid-back {
+  transform: rotateY(360deg);
+}
+
+footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.arbitrary {
+  background: #000000;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.characters-section {
+  text-align: center;
+  padding: 60px 20px;
+  color: #d6e7f7;
+}
+
+.characters-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  text-shadow: 0 0 8px #3a5e80;
+  font-family: 'EB Garamond', serif;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  width: 260px;
+  height: 360px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card {
+  width: 260px;
+  height: 360px;
+  perspective: 1200px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared style for both sides to ensure smooth flip */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(80, 40, 150, 0.3),
+    inset 0 0 8px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Georgia', serif;
+}
+
+/* Front face with mystical dark palette and image */
+.card-front {
+  background: linear-gradient(to top right, #0d0f14, #1a1e2b);
+}
+
+.card-front img {
+  width: 100%;
+  height: 88%;
+  object-fit: cover;
+  border: none;
+  margin: 0;
+  filter: brightness(0.85) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.card-front:hover img {
+  filter: brightness(1) contrast(1.2) saturate(1.1);
+}
+
+.card-front h3 {
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  background: rgba(20, 20, 30, 0.85);
+  color: #eae6f2;
+  font-size: 1.2em;
+  text-shadow: 0 0 6px rgba(120, 80, 200, 0.4);
+  border-top: 1px solid rgba(80, 90, 120, 0.3);
+}
+
+/* Back face, rotated, dark arcane shimmer */
+.card-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle at top, #1d1f29 0%, #0e0f14 100%);
+  color: #d0d3da;
+  text-align: center;
+  font-size: 0.95em;
+  line-height: 1.4;
+  padding: 22px 18px;
+  box-shadow:
+    inset 0 0 18px rgba(100, 60, 200, 0.2),
+    inset 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+/* Fix for ghost box behind rotating card */
+.card-inner,
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #000000;
+  color: #aaa;
+  text-align: center;
+  padding: 40px 20px 30px;
+  font-size: 1em;
+  border-top: 1px solid #333;
+  box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .book-list, .card-container, .factoid-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book, .card, .factoid {
+    width: 90%;
+  }
+}
+
+.footer-links {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #d0e4ff;
+  text-shadow: 0 0 5px #7a9bbf;
+}
+
+.copyright {
+  color: #777;
+  font-size: 0.9em;
+  font-family: 'Georgia', serif;
+  margin-top: 10px;
+}
