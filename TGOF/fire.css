@@ -7,6 +7,17 @@
   }
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 @media (max-width: 768px) {
   .timeline-grid {
     grid-template-columns: repeat(2, 1fr); /* Even grid */
@@ -348,6 +359,8 @@ section:hover .hover-reveal {
   padding-left: 40px;       /* preserve your original left padding */
   box-sizing: content-box;  /* prevent padding from shrinking width */
 }
+
+
 
 .timeline-box {
   display: flex;
