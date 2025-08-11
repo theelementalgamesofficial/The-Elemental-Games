@@ -201,7 +201,7 @@ section h2 {
 }
 
 section:hover .hover-reveal {
-  max-height: 500px;
+  
   opacity: 1;
   transition: max-height 0.6s ease-in, opacity 0.6s ease-in;
 }
